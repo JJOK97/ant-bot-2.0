@@ -24,7 +24,8 @@ logs/
 *.pid
 
 # 강화학습 모델 저장 폴더
-models/
+models/*.h5
+models/*.zip
 *.zip  # 학습된 모델 파일
 
 # 백테스팅 데이터 (과거 시세 데이터 CSV 등)

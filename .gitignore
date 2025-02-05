@@ -1,0 +1,47 @@
+# 기본적인 Python 관련 무시 파일
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+venv/
+env/
+*.env
+*.venv
+
+# Jupyter Notebook Checkpoints (만약 Jupyter 사용 시)
+.ipynb_checkpoints/
+
+# IDE 설정 파일 무시 (VS Code, PyCharm 등)
+.vscode/
+.idea/
+*.iml
+
+# 로그 파일 및 캐시 데이터
+logs/
+*.log
+*.out
+*.pid
+
+# 강화학습 모델 저장 폴더
+models/
+*.zip  # 학습된 모델 파일
+
+# 백테스팅 데이터 (과거 시세 데이터 CSV 등)
+data/
+*.csv  # 데이터 파일
+*.json # JSON 데이터
+*.db   # 데이터베이스 파일 (SQLite 등)
+
+# 환경 설정 파일 및 API 키 정보
+config.yaml
+config.json
+secrets.json
+.env
+
+# Mac OS / Windows에서 생성되는 불필요한 파일
+.DS_Store
+Thumbs.db
+
+# Jupyter Notebook 자동 생성 파일 (선택적)
+.ipynb_checkpoints/

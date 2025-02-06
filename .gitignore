@@ -46,3 +46,6 @@ Thumbs.db
 
 # Jupyter Notebook 자동 생성 파일 (선택적)
 .ipynb_checkpoints/
+
+# txt 파일
+backtesting_results.txt

@@ -1,0 +1,35 @@
+name: Production Deploy Pipeline
+on:
+  push:
+    branches: [ main ]
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.10'
+          
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+          
+      - name: Deploy to production server
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.PROD_HOST }}
+          username: ubuntu
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          script: |
+            cd ~/AntBot2.0
+            git pull
+            # 기존 프로세스 종료
+            pkill -f live_trading.py || true
+            # 환경 변수 설정
+            source .env
+            # 백그라운드에서 실행
+            nohup python live_trading.py > trading.log 2>&1 &

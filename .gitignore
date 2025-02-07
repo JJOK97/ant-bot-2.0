@@ -49,3 +49,6 @@ Thumbs.db
 
 # txt 파일
 backtesting_results.txt
+
+# config 파일
+config.py

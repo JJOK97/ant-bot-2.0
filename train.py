@@ -6,7 +6,7 @@ import joblib
 import tensorflow as tf
 from stable_baselines3 import PPO
 from stable_baselines3.common.vec_env import DummyVecEnv
-from gym_trading.trading_env import TradingEnv
+from trading.trading_env import TradingEnv
 from sklearn.preprocessing import MinMaxScaler
 
 #  PPO 모델 저장 경로

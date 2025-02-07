@@ -1,5 +1,5 @@
 from stable_baselines3 import PPO
-from gym_trading.trading_env import TradingEnv
+from trading.trading_env import TradingEnv
 import os
 
 # 모델 파일 확인 후 로드

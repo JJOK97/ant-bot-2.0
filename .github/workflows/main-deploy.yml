@@ -29,7 +29,8 @@ jobs:
             git pull
             # 기존 프로세스 종료
             pkill -f live_trading.py || true
-            # 환경 변수 설정
-            source .env
+            # GitHub Secrets에서 환경 변수 설정
+            echo "BITHUMB_API_KEY=${{ secrets.BITHUMB_API_KEY }}" > .env
+            echo "BITHUMB_SECRET_KEY=${{ secrets.BITHUMB_SECRET_KEY }}" >> .env
             # 백그라운드에서 실행
             nohup python live_trading.py > trading.log 2>&1 &
